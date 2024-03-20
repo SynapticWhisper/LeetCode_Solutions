@@ -47,6 +47,7 @@ class Solution_2:
         while node:
             if counter < a:
                 r_help.next = node
+                r_help = r_help.next
                 node = node.next
                 counter += 1
             elif counter == a:
