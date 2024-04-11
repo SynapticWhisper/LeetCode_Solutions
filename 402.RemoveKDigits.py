@@ -38,6 +38,7 @@ class Solution:
             num.pop(0)
         return "".join(num)
         
+        # Run time error
         
         # K = k
         # result = []
