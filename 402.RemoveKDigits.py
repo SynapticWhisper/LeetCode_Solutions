@@ -38,7 +38,7 @@ class Solution:
             num.pop(0)
         return "".join(num)
         
-        # Run time error
+        # Time Limit Exceeded
         
         # K = k
         # result = []
