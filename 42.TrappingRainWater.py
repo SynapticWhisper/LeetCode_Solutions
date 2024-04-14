@@ -44,19 +44,23 @@
 #             max_value -= 1
 #         return result
 
-from collections import Counter
-
 class Solution:
     def trap(self, height: list[int]) -> int:
-        h_count = Counter(height)
-        h_ind: dict = {}
-        for i, h in enumerate(height):
-            ind = h_ind.get(h, [])
-            ind.append(i)
-            h_ind[h] = ind
-        print(h_ind)
-        
-
+        i = 0
+        left_max = height[0]
+        result = 0
+        j = len(height) - 1
+        right_max = height[j]
+        while i < j:
+            if left_max <= right_max:
+                result += left_max - height[i]
+                i += 1
+                left_max = max(left_max, height[i])
+            else:
+                result += right_max - height[j]
+                j -= 1
+                right_max = max(right_max, height[j])
+        return result
 
 
 if __name__ == "__main__":
